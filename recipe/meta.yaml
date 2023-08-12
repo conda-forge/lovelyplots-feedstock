@@ -1,5 +1,5 @@
 {% set name = "lovelyplots" %}
-{% set version = "0.0.26" %}
+{% set version = "0.0.27" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LovelyPlots-{{ version }}.tar.gz
-  sha256: 36b1e19c49863d7a5e18bff39e58d458a56ab4ea3c1c2b086992ec36a4fa80e1
+  sha256: 5fdfb794457c5fdfba7ccdcbac475e4b08ce9ac05b457cb53a2a959c100f02b0
 
 build:
   noarch: python
