@@ -19,6 +19,7 @@ requirements:
     - matplotlib-base
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - matplotlib-base
     - python >={{ python_min }}
