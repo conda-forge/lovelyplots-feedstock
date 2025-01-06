@@ -6,22 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 6b6e6cb50975e6681755b55447402e6cca6c21451adf6d1255884fd457739d68
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - matplotlib-base
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
   run:
     - matplotlib-base
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -30,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/killiansheriff/LovelyPlots
